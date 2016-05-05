@@ -9,6 +9,9 @@
         [ng\:cloak], [ng-cloak], .ng-cloak {
             display: none !important;
         }
+		body {
+			background: url(/img/swirl_pattern.png) repeat;
+		}
     </style>
 </head>
 <body>
