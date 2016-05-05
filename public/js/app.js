@@ -59,11 +59,21 @@ var app = angular.module('dfjApp',['ngMessages'])
         ];
 
         $scope.save = function() {
-            console.log('save');
-            console.log($scope.feedbackForm);
-
             if ($scope.feedbackForm.$valid) {
-                // save the user
+                var d = $scope.feedback.dob.toString();
+                $scope.feedback.dob_l = moment(d).format("YYYY-MM-DD");
+                $http.post('/feedback/save', $scope.feedback).then(function(ret) {
+                    console.log(ret);
+                   if(ret.status==200) {
+                       $scope.feedback = {};
+                       $scope.feedbackForm.$setPristine();
+                       $scope.feedbackForm.$setUntouched();
+                       swal("Sikeres regisztráció!", "Az adatokat mentettük.", "success");
+                       console.log(ret.data);
+                   }
+                }, function(rest) {
+                    swal("Hoppá!", "Valami probléma merült fel az adatok mentésénél.", "error");
+                });
             } else {
                 console.log('jajj');
             }
