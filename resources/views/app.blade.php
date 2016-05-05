@@ -10,6 +10,7 @@
     @yield('concent')
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
 {{--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.js">--}}
 <script src="/js/showErrors.min.js"></script>
 <script src="/js/app.js"></script>
